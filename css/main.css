@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+
+:root {
+  --font-barlow: "Barlow Condensed', sans-serif";
+  --font-bellefair: "Bellefair', serif";
+
+  --color-dark: #0b0d17;
+  --color-purple: #d0d6f9;
+  --color-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 150px;
+  color: var(--color-white);
+}
+
+h2 {
+  font-size: 100px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4,
+.btn__explore {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 28px;
+  letter-spacing: 4.75px;
+  color: var(--color-purple);
+}
+
+p {
+  font-family: var(--font-barlow);
+  font-weight: 400;
+  color: var(--color-purple);
+}
+
+.p__subheading1 {
+  font-size: 28px;
+}
+
+.p__subheading2 {
+  font-size: 14px;
+  letter-spacing: 2.35px;
+}
+
+a {
+  font-size: 16px;
+  letter-spacing: 2.7px;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+.btn__explore,
+.p__subheading1 {
+  font-family: var(--font-bellefair);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h5,
+p,
+.p__subheading2,
+a {
+  font-family: var(--font-barlow);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+body{
+    background-image: url("../assets/home/background-home-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+}
