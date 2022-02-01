@@ -1,48 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
 
 :root {
-  --font-barlow: "Barlow Condensed', sans-serif";
-  --font-bellefair: "Bellefair', serif";
+  --font-barlow: Barlow, sans-serif;
+  --font-barlow-cond: "Barlow Condensed", sans-serif;
+  --font-bellefair: Bellefair, serif;
 
   --color-dark: #0b0d17;
   --color-purple: #d0d6f9;
   --color-white: #ffffff;
+  --color-nav-bg: #262a33;
+  --color-line: #484b54;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 h1 {
-  font-size: 150px;
+  font-size: 80px;
   color: var(--color-white);
 }
 
 h2 {
-  font-size: 100px;
+  font-size: 56px;
+  color: var(--color-white);
 }
 
 h3 {
-  font-size: 56px;
+  font-size: 24px;
+  color: var(--color-white);
 }
 
 h4,
 .btn__explore {
-  font-size: 32px;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  color: var(--color-dark);
 }
 
 h5 {
-  font-size: 28px;
-  letter-spacing: 4.75px;
+  font-size: 16px;
+  letter-spacing: 2.7px;
   color: var(--color-purple);
 }
 
-p {
+.p__text {
   font-family: var(--font-barlow);
+  font-size: 15px;
   font-weight: 400;
+  line-height: 25px;
   color: var(--color-purple);
 }
 
@@ -52,12 +60,19 @@ p {
 
 .p__subheading2 {
   font-size: 14px;
-  letter-spacing: 2.35px;
+  letter-spacing: 2.36px;
+}
+
+.p__tabs {
+  font-size: 14px;
+  letter-spacing: 2.36;
+  color: var(--color-purple);
 }
 
 a {
   font-size: 16px;
   letter-spacing: 2.7px;
+  color: var(--color-white);
   text-decoration: none;
 }
 
@@ -73,19 +88,86 @@ h4,
 }
 
 h5,
-p,
 .p__subheading2,
 a {
-  font-family: var(--font-barlow);
+  font-family: var(--font-barlow-cond);
   font-weight: 400;
   text-transform: uppercase;
 }
 
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
 
-body{
-    background-image: url("../assets/home/background-home-mobile.jpg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
+@media screen and (min-width: 48rem) {
+  h1 {
+    font-size: 150px;
+  }
 
+  h2 {
+    font-size: 80px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  h4,
+  .btn__explore {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  h5 {
+    font-size: 20px;
+    letter-spacing: 3.38px;
+  }
+
+  .p__text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .p__tabs {
+    font-size: 16px;
+    letter-spacing: 2.7;
+  }
+
+  a {
+    font-size: 14px;
+    letter-spacing: 2.36px;
+  }
+}
+
+@media screen and (min-width: 90rem) {
+  h2 {
+    font-size: 100px;
+  }
+
+  h3 {
+    font-size: 56px;
+  }
+
+  h4,
+  .btn__explore {
+    font-size: 32px;
+  }
+
+  h5 {
+    font-size: 28px;
+    letter-spacing: 4.75px;
+  }
+
+  .p__text {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  a {
+    font-size: 16px;
+    letter-spacing: 2.7px;
+  }
 }
