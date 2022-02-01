@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap');
 :root {
   --font-barlow: Barlow, sans-serif;
   --font-barlow-cond: "Barlow Condensed", sans-serif;
@@ -56,11 +55,13 @@ h5 {
 
 .p__subheading1 {
   font-size: 28px;
+  color: var(--color-white);
 }
 
 .p__subheading2 {
   font-size: 14px;
   letter-spacing: 2.36px;
+  color: var(--color-purple);
 }
 
 .p__tabs {
@@ -142,7 +143,7 @@ body {
   }
 }
 
-@media screen and (min-width: 90rem) {
+@media screen and (min-width: 80rem) {
   h2 {
     font-size: 100px;
   }

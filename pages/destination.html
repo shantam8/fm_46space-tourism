@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Tourism</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/01destination.css" />
+    <script src="../js/main.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="header__content">
+        <div class="header__content__logo">
+          <img src="../assets/shared/logo.svg" alt="logo" />
+        </div>
+        <nav class="nav__content">
+          <ul>
+            <li>
+              <a href="./home.html"
+                ><span class="nav__content__link-number" aria-hidden="true"
+                  >00</span
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="./pages/destination.html"
+                ><span class="nav__content__link-number" aria-hidden="true"
+                  >01</span
+                >Destination</a
+              >
+            </li>
+            <li>
+              <a href="./pages/crew.html"
+                ><span class="nav__content__link-number" aria-hidden="true"
+                  >02</span
+                >Crew</a
+              >
+            </li>
+            <li>
+              <a href="./pages/technology.html"
+                ><span class="nav__content__link-number" aria-hidden="true"
+                  >03</span
+                >Technology</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          type="button"
+          id="btn-toggle-mobile-menu"
+          class="header__content__btn-toggle"
+          aria-label="toggle mobile menu"
+        ></button>
+      </div>
+    </header>
+
+    <main>
+      <div class="destination__content">
+        <h5 class="destination__content__titlebar">
+          <span>01</span>Pick your destination
+        </h5>
+
+        <div class="destination__content__wrapper">
+          <div class="destination__content__image">
+            <img id="destination__img" src="../assets/destination/image-moon.png" alt="moon" />
+          </div>
+          <div class="destination__content__text-content">
+            <div class="text-content__buttons">
+              <button>Moon</button>
+              <button>Mars</button>
+
+              <button>Europa</button>
+
+              <button>Titan</button>
+            </div>
+
+
+            <h2 id="destination__title" class="text-content__title">Moon</h2>
+
+            <p id="destination__description" class="p__text">
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away to help regain perspective and come back refreshed.
+              While you’re there, take in some history by visiting the Luna 2
+              and Apollo 11 landing sites.
+            </p>
+
+            <div class="text-content__info-box">
+              <div class="text-content__info-box__distance">
+                <p class="p__subheading2">avg. distance</p>
+                <p id="destination__distance" class="p__subheading1">384.400 km</p>
+              </div>
+              <div class="text-content__info-time">
+                <p class="p__subheading2">est. travel time</p>
+                <p id="destination__travel" class="p__subheading1">3 days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
