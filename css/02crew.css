@@ -3,9 +3,6 @@ body {
 }
 
 .crew__content {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 327px;
   height: 90vh;
 }
 
@@ -22,18 +19,21 @@ body {
 
 .crew__content__wrapper {
   height: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 90%;
+  max-width: 327px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  margin-top: 30px;
 }
 
 .crew__content__image {
+  position: relative;
   width: 50%;
   max-width: 327px;
-  position: relative;
 }
 .crew__content__image::after {
   position: absolute;
@@ -65,8 +65,8 @@ body {
 .text-content__crew-buttons button {
   width: 10px;
   height: 10px;
-  border-radius: 50%;
   border: none;
+  border-radius: 50%;
   background-color: var(--color-crew-rank);
 }
 
@@ -92,14 +92,14 @@ body {
 
   .crew__content {
     padding-top: 46px;
-    width: 90%;
-    max-width: unset;
     height: 88vh;
   }
   .crew__content__wrapper {
+    margin-top: 62px;
+    width: 90%;
+    max-width: unset;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    margin-top: 62px;
   }
   .crew__content__image {
     width: 75%;
@@ -115,12 +115,13 @@ body {
 
   .crew__content__titlebar {
     text-align: start;
+    margin-left: 39px;
   }
 
   .crew__content__text-content {
+    padding-top: 0;
     display: flex;
     flex-direction: column;
-    padding-top: 0;
   }
 
   .text-content__crew-buttons {
@@ -135,8 +136,8 @@ body {
   }
 
   #crew__description {
-    width: 573px;
     margin: 35px auto 0 auto;
+    width: 573px;
   }
 }
 
@@ -147,39 +148,37 @@ body {
 
   .crew__content {
     padding-top: 84px;
-    width: 100vw;
-    height: 85vh;
   }
 
   .crew__content__titlebar {
-    padding-left: 135px;
+    margin-left: 135px;
   }
 
   .crew__content__wrapper {
+    margin: 0;
+    padding: 0 240px 0 135px;
+    width: 100vw;
+    height: 85vh;
     flex-direction: row-reverse;
     align-items: stretch;
-    padding: 0 135px;
-    margin: 0;
   }
   .crew__content__image {
-    flex: 1;
     margin: 0;
+    flex: 1;
     max-width: 568px;
     align-self: end;
   }
 
-
   .crew__content__image img {
-   height: unset;
-   width: 100%;
-   /* transform: translateY(-50px); */
+    width: 90%;
+    height: unset;
   }
   .crew__content__text-content {
-    flex: 1;
-    text-align: start;
-    width: 445px;
-    align-self: end;
     padding-bottom: 150px;
+    width: 445px;
+    flex: 1;
+    align-self: end;
+    text-align: start;
   }
 
   .text-content__crew-buttons {

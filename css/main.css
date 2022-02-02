@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap");
 :root {
   --font-barlow: Barlow, sans-serif;
   --font-barlow-cond: "Barlow Condensed", sans-serif;
@@ -9,15 +9,12 @@
   --color-white: #ffffff;
   --color-nav-bg: #262a33;
   --color-navbar-line: #484b54;
-  --color-hover: #85868B;
+  --color-hover: #85868b;
 
-
-  --color-crew-border: #383B4B;
+  --color-crew-border: #383b4b;
   --color-crew-rank: #909296;
-  --color-crew-bullet: #36373F;
-
-  --color-technology-circle: #484951
-
+  --color-crew-bullet: #36373f;
+  --color-technology-circle: #484951;
 }
 
 * {

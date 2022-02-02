@@ -132,6 +132,7 @@
     left: 6rem;
     right: 50rem;
     background-color: var(--color-navbar-line);
+    z-index: 80;
   }
 
   .nav__content ul {

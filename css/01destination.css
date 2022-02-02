@@ -3,10 +3,7 @@ body {
 }
 
 .destination__content {
-  margin: 0 auto;
   padding-bottom: 58px;
-  width: 90%;
-  max-width: 327px;
   height: 90vh;
 }
 
@@ -18,10 +15,13 @@ body {
 .destination__content__titlebar span {
   margin-right: 10px;
   font-weight: bold;
-  color: var(--color-line);
+  color: var(--color-navbar-line);
 }
 
 .destination__content__wrapper {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 327px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -97,8 +97,6 @@ body {
 
   .destination__content {
     padding-top: 46px;
-    width: 90%;
-    max-width: unset;
     height: 91vh;
   }
 
@@ -109,6 +107,12 @@ body {
 
   .destination__content__titlebar {
     text-align: start;
+    margin-left: 39px;
+  }
+
+  .destination__content__wrapper {
+    width: 90%;
+    max-width: unset;
   }
 
   .text-content__destination-buttons {
@@ -140,15 +144,15 @@ body {
 
   .destination__content {
     padding-top: 84px;
-    width: 100vw;
     height: 85vh;
   }
 
   .destination__content__titlebar {
-    padding-left: 135px;
+    margin-left: 135px;
   }
 
   .destination__content__wrapper {
+    width: 100vw;
     margin-top: 68px;
     flex-direction: row;
   }
