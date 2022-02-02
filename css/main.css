@@ -8,7 +8,16 @@
   --color-purple: #d0d6f9;
   --color-white: #ffffff;
   --color-nav-bg: #262a33;
-  --color-line: #484b54;
+  --color-navbar-line: #484b54;
+  --color-hover: #85868B;
+
+
+  --color-crew-border: #383B4B;
+  --color-crew-rank: #909296;
+  --color-crew-bullet: #36373F;
+
+  --color-technology-circle: #484951
+
 }
 
 * {
@@ -101,6 +110,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+  height: 100vh;
 }
 
 @media screen and (min-width: 48rem) {

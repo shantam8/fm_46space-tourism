@@ -41,7 +41,7 @@ body {
   object-fit: contain;
 }
 
-.text-content__buttons {
+.text-content__destination-buttons {
   margin: 0 auto;
   width: 80%;
   max-width: 285px;
@@ -50,7 +50,7 @@ body {
   align-items: center;
 }
 
-.text-content__buttons button {
+.text-content__destination-buttons button {
   position: relative;
   padding: 11px 0;
   border: none;
@@ -62,11 +62,11 @@ body {
   text-transform: uppercase;
 }
 
-.text-content__buttons button:hover {
+.text-content__destination-buttons button:hover {
   cursor: pointer;
 }
 
-.text-content__buttons button:hover::after {
+.text-content__destination-buttons button:hover::after {
   position: absolute;
   content: "";
   inset: 0;
@@ -111,12 +111,12 @@ body {
     text-align: start;
   }
 
-  .text-content__buttons {
+  .text-content__destination-buttons {
     max-width: unset;
     width: 285px;
   }
 
-  .text-content__buttons button {
+  .text-content__destination-buttons button {
     font-size: 16px;
     letter-spacing: 2.7px;
   }
@@ -162,7 +162,7 @@ body {
     width: 445px;
   }
 
-  .text-content__buttons {
+  .text-content__destination-buttons {
     margin: 0;
   }
 

@@ -2,7 +2,11 @@ let btnToggleMobileMenu = document.querySelector("#btn-toggle-mobile-menu");
 let navbar = document.querySelector(".nav__content");
 
 let btnsDestinationSelect = document.querySelectorAll(
-  ".text-content__buttons button"
+  ".text-content__destination-buttons button"
+);
+
+let btnsCrewSelect = document.querySelectorAll(
+  ".text-content__crew-buttons button"
 );
 
 let data;
@@ -27,6 +31,23 @@ function handleDestinationSelection(event) {
   }
 }
 
+function handleCrewSelection(event){
+  switch (event.target.value) {
+    case "0":
+      fillCrewCard(data.crew[0]);
+      break;
+    case "1":
+      fillCrewCard(data.crew[1]);
+      break;
+    case "2":
+      fillCrewCard(data.crew[2]);
+      break;
+    case "3":
+      fillCrewCard(data.crew[3]);
+      break;
+  }
+}
+
 function fillDestinationCard(cardData) {
   let name = cardData.name;
   let description = cardData.description;
@@ -42,6 +63,22 @@ function fillDestinationCard(cardData) {
   document.querySelector("#destination__travel").textContent = travel;
 }
 
+function fillCrewCard(cardData) {
+  console.log("asd")
+  let image = cardData.images.png;
+  let rank = cardData.role;
+  let name = cardData.name;
+  let description = cardData.bio;
+  image = "." + image
+  
+  document.querySelector("#crew__img").src = image;
+  document.querySelector("#crew__img").setAttribute("aria-label", "image " +rank);
+  document.querySelector("#crew__img").alt = rank;
+  document.querySelector("#crew__rank").textContent = rank;
+  document.querySelector("#crew__name").textContent = name;
+  document.querySelector("#crew__description").textContent = description;
+}
+
 function fetchData() {
   fetch("../json/data.json")
     .then((response) => response.json())
@@ -55,6 +92,10 @@ function init() {
 
   btnsDestinationSelect.forEach((button) => {
     button.addEventListener("click", handleDestinationSelection);
+  });
+
+  btnsCrewSelect.forEach((button) => {
+    button.addEventListener("click", handleCrewSelection);
   });
   fetchData();
 }
