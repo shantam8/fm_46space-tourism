@@ -9,7 +9,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="../assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/nav.css" />
@@ -22,7 +22,13 @@
         <div class="header__content__logo">
           <img src="../assets/shared/logo.svg" alt="logo" />
         </div>
-        <nav class="nav__content">
+        <button
+          type="button"
+          id="btn-toggle-mobile-menu"
+          class="header__content__btn-toggle"
+          aria-label="toggle mobile menu"
+        ></button>
+        <nav class="nav__content display-none">
           <ul>
             <li>
               <a href="../index.html"
@@ -45,7 +51,7 @@
                 >Crew</a
               >
             </li>
-            <li>
+            <li class="page__active">
               <a href="../pages/technology.html"
                 ><span class="nav__content__link-number" aria-hidden="true"
                   >03</span
@@ -54,12 +60,6 @@
             </li>
           </ul>
         </nav>
-        <button
-          type="button"
-          id="btn-toggle-mobile-menu"
-          class="header__content__btn-toggle"
-          aria-label="toggle mobile menu"
-        ></button>
       </div>
     </header>
 
@@ -70,16 +70,24 @@
         </h5>
         <div class="technology__content__wrapper">
           <div class="technology__content__image">
-            <img
-              id="technology__img"
-              src="../assets/technology/image-launch-vehicle-portrait.jpg"
-              alt="commander"
-              aria-label="image commander"
-            />
+            <picture>
+              <source
+                id="technology__imgPortrait"
+                media="(min-width: 1280px)"
+                srcset="../assets/technology/image-launch-vehicle-portrait.jpg"
+              />
+
+              <img
+                id="technology__imgLandscape"
+                src="../assets/technology/image-launch-vehicle-landscape.jpg"
+                alt="lauch vehicle"
+                aria-label="lauch vehicle"
+              />
+            </picture>
           </div>
           <div class="technology__content__text-content">
             <div class="text-content__technology-buttons">
-              <button aria-label="select launch vehicle">1</button>
+              <button class="active" aria-label="select launch vehicle">1</button>
               <button aria-label="select spaceport">2</button>
               <button aria-label="select space capsule">3</button>
             </div>

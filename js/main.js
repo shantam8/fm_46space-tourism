@@ -1,22 +1,42 @@
 let btnToggleMobileMenu = document.querySelector("#btn-toggle-mobile-menu");
 let navbar = document.querySelector(".nav__content");
 
+let btnExplore = document.querySelectorAll("#btn__explore");
 let btnsDestinationSelect = document.querySelectorAll(
   ".text-content__destination-buttons button"
 );
 let btnsCrewSelect = document.querySelectorAll(
   ".text-content__crew-buttons button"
 );
+
 let btnsTechnologySelect = document.querySelectorAll(
   ".text-content__technology-buttons button"
 );
 
 let data;
-function handleMobileMenu(event) {
-  navbar.classList.toggle("open-menu");
+function handleMobileMenu() {
+  if (navbar.classList.contains("open-menu")) {
+    setTimeout(() => {
+      navbar.classList.toggle("display-none");
+    }, 250);
+    navbar.classList.toggle("open-menu");
+    btnToggleMobileMenu.style.backgroundImage =
+      'url("../assets/shared/icon-hamburger.svg")';
+  } else {
+    setTimeout(() => {
+      navbar.classList.toggle("open-menu");
+    }, 50);
+    navbar.classList.toggle("display-none");
+    btnToggleMobileMenu.style.backgroundImage =
+      'url("../assets/shared/icon-close.svg")';
+  }
 }
 
 function handleDestinationSelection(event) {
+  btnsDestinationSelect.forEach((button) => {
+    button.classList.remove("active");
+  });
+
   switch (event.target.textContent) {
     case "Moon":
       fillDestinationCard(data.destinations[0]);
@@ -31,6 +51,7 @@ function handleDestinationSelection(event) {
       fillDestinationCard(data.destinations[3]);
       break;
   }
+  event.target.classList.add("active");
 }
 
 function fillDestinationCard(cardData) {
@@ -39,7 +60,6 @@ function fillDestinationCard(cardData) {
   let distance = cardData.distance;
   let travel = cardData.travel;
   let image = cardData.images.png;
-  image = "." + image;
 
   document.querySelector("#destination__img").src = image;
   document.querySelector("#destination__title").textContent = name;
@@ -49,6 +69,9 @@ function fillDestinationCard(cardData) {
 }
 
 function handleCrewSelection(event) {
+  btnsCrewSelect.forEach((button) => {
+    button.classList.remove("active");
+  });
   switch (event.target.value) {
     case "0":
       fillCrewCard(data.crew[0]);
@@ -63,15 +86,14 @@ function handleCrewSelection(event) {
       fillCrewCard(data.crew[3]);
       break;
   }
+  event.target.classList.add("active");
 }
 
 function fillCrewCard(cardData) {
-  console.log("asd");
   let image = cardData.images.png;
   let rank = cardData.role;
   let name = cardData.name;
   let description = cardData.bio;
-  image = "." + image;
 
   document.querySelector("#crew__img").src = image;
   document
@@ -84,6 +106,9 @@ function fillCrewCard(cardData) {
 }
 
 function handleTechnologySelection(event) {
+  btnsTechnologySelect.forEach((button) => {
+    button.classList.remove("active");
+  });
   switch (event.target.textContent) {
     case "1":
       fillTechnologyCard(data.technology[0]);
@@ -95,14 +120,24 @@ function handleTechnologySelection(event) {
       fillTechnologyCard(data.technology[2]);
       break;
   }
+  event.target.classList.add("active");
 }
 
 function fillTechnologyCard(cardData) {
+  console.log(cardData);
   let name = cardData.name;
   let description = cardData.description;
+  let imageLandscape = cardData.images.landscape;
+  let imagePortrait = cardData.images.portrait;
 
   document.querySelector("#technology__title").textContent = name;
   document.querySelector("#technology__description").textContent = description;
+  document.querySelector("#technology__imgPortrait").srcset = imagePortrait;
+  document.querySelector("#technology__imgLandscape").src = imageLandscape;
+  document
+    .querySelector("#technology__imgLandscape")
+    .setAttribute("aria-label", name);
+  document.querySelector("#technology__imgLandscape").alt = name;
 }
 
 function fetchData() {
@@ -115,18 +150,38 @@ function fetchData() {
 
 function init() {
   btnToggleMobileMenu.addEventListener("click", handleMobileMenu);
-
+  btnExplore.forEach((button) => {
+    button.addEventListener("click", () => {
+      window.open("./pages/destination.html", "_self");
+    });
+  });
   btnsDestinationSelect.forEach((button) => {
     button.addEventListener("click", handleDestinationSelection);
   });
-
   btnsCrewSelect.forEach((button) => {
     button.addEventListener("click", handleCrewSelection);
   });
-
   btnsTechnologySelect.forEach((button) => {
     button.addEventListener("click", handleTechnologySelection);
   });
+
+  window.addEventListener("resize", () => {
+    if (navbar.classList.contains("open-menu") && screen.width >= 768) {
+      btnToggleMobileMenu.click();
+    } else if (!navbar.classList.contains("open-menu") && screen.width >= 768) {
+      navbar.classList.remove("display-none");
+    } else if (screen.width < 768) {
+      navbar.classList.add("display-none");
+      navbar.classList.remove("open-menu");
+      btnToggleMobileMenu.style.backgroundImage =
+        'url("../assets/shared/icon-hamburger.svg")';
+    }
+  });
+
+  if (!navbar.classList.contains("open-menu") && screen.width >= 768) {
+    btnToggleMobileMenu.click();
+  }
+
   fetchData();
 }
 

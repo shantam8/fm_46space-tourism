@@ -41,7 +41,7 @@ body {
   bottom: 0;
   left: -100px;
   right: -100px;
-  border-bottom: 2px solid var(--color-crew-border);
+  border-bottom: 2px solid var(--color-dark-gray);
 }
 
 .crew__content__image img {
@@ -67,18 +67,22 @@ body {
   height: 10px;
   border: none;
   border-radius: 50%;
-  background-color: var(--color-crew-rank);
+  background-color: var(--color-dark-gray);
+}
+
+.text-content__crew-buttons button.active {
+  background-color: var(--color-white);
 }
 
 .text-content__crew-buttons button:hover {
   cursor: pointer;
-  background-color: var(--color-hover);
+  background-color: var(--color-light-gray);
 }
 
 #crew__rank {
   margin-top: 32px;
   margin-bottom: 16px;
-  color: var(--color-crew-rank);
+  color: var(--color-light-gray);
 }
 
 #crew__description {
@@ -155,22 +159,22 @@ body {
   }
 
   .crew__content__wrapper {
-    margin: 0;
-    padding: 0 240px 0 135px;
+    margin: 0 auto;
+    padding: 0 135px;
     width: 100vw;
-    height: 85vh;
+    max-width: 1600px;
+    height: 76vh;
     flex-direction: row-reverse;
-    align-items: stretch;
+    align-items: end;
   }
   .crew__content__image {
     margin: 0;
     flex: 1;
-    max-width: 568px;
+    max-width: 500px;
     align-self: end;
   }
 
   .crew__content__image img {
-    width: 90%;
     height: unset;
   }
   .crew__content__text-content {

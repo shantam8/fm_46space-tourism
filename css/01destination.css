@@ -3,8 +3,9 @@ body {
 }
 
 .destination__content {
-  padding-bottom: 58px;
+  padding-bottom: 40px;
   height: 90vh;
+  overflow: auto;
 }
 
 .destination__content__titlebar {
@@ -62,6 +63,17 @@ body {
   text-transform: uppercase;
 }
 
+.text-content__destination-buttons button.active {
+  color: var(--color-white);
+}
+
+.text-content__destination-buttons button.active::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-bottom: 3px solid var(--color-white);
+}
+
 .text-content__destination-buttons button:hover {
   cursor: pointer;
 }
@@ -70,7 +82,7 @@ body {
   position: absolute;
   content: "";
   inset: 0;
-  border-bottom: 3px solid var(--color-white);
+  border-bottom: 3px solid var(--color-light-gray);
 }
 
 .text-content__title {
@@ -79,7 +91,7 @@ body {
 
 #destination__description {
   padding-bottom: 36px;
-  border-bottom: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-navbar-line);
 }
 
 .p__subheading2 {
@@ -153,14 +165,17 @@ body {
 
   .destination__content__wrapper {
     width: 100vw;
+    max-width: 1500px;
     margin-top: 68px;
     flex-direction: row;
   }
+
   .destination__content__image {
     margin: 0;
     width: 445px;
     height: 445px;
   }
+
   .destination__content__text-content {
     text-align: start;
     width: 445px;
@@ -181,5 +196,12 @@ body {
 
   .text-content__info-time {
     margin-left: 79px;
+  }
+}
+
+
+@media screen and (min-width: 100rem) {
+  .destination__content__wrapper {
+    margin-top: 100px;
   }
 }

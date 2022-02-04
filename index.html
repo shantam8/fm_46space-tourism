@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/nav.css" />
     <link rel="stylesheet" href="./css/home.css" />
-    <script src="./main.js" defer></script>
+    <script src="./js/main.js" defer></script>
   </head>
   <body>
     <header>
@@ -22,9 +22,15 @@
         <div class="header__content__logo">
           <img src="./assets/shared/logo.svg" alt="logo" />
         </div>
-        <nav class="nav__content">
+        <button
+          type="button"
+          id="btn-toggle-mobile-menu"
+          class="header__content__btn-toggle"
+          aria-label="toggle mobile menu"
+        ></button>
+        <nav class="nav__content display-none">
           <ul>
-            <li>
+            <li class="page__active">
               <a href="./index.html"
                 ><span class="nav__content__link-number" aria-hidden="true"
                   >00</span
@@ -54,12 +60,6 @@
             </li>
           </ul>
         </nav>
-        <button
-          type="button"
-          id="btn-toggle-mobile-menu"
-          class="header__content__btn-toggle"
-          aria-label="toggle mobile menu"
-        ></button>
       </div>
     </header>
 
@@ -75,7 +75,7 @@
             world experience!
           </p>
         </div>
-        <div class="home__content__button btn__explore">Explore</div>
+        <button id="btn__explore" class="home__content__button">Explore</button>
       </div>
     </main>
   </body>

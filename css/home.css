@@ -19,13 +19,22 @@ body {
 }
 
 .home__content__button {
+  position: relative;
   width: 150px;
   height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
   border-radius: 50%;
   background-color: var(--color-white);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 0 0px var(--color-light-gray-half-transparent);
+}
+
+.home__content__button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 88px var(--color-light-gray-half-transparent);
 }
 
 @media screen and (min-width: 48rem) {
@@ -47,6 +56,17 @@ body {
 @media screen and (min-width: 80rem) {
   body {
     background-image: url("../assets/home/background-home-desktop.jpg");
+  }
+
+  .nav__content ul {
+    background-color: hsl(0, 0%, 0%, 0.85);
+  }
+
+  @supports (backdrop-filter: blur(5px)) {
+    .nav__content ul {
+      background-color: hsl(0, 0%, 100%, 0.1);
+      backdrop-filter: blur(5px);
+    }
   }
 
   .home__content {

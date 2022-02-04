@@ -9,7 +9,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="../assets/favicon-32x32.png"
     />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/nav.css" />
@@ -22,7 +22,13 @@
         <div class="header__content__logo">
           <img src="../assets/shared/logo.svg" alt="logo" />
         </div>
-        <nav class="nav__content">
+        <button
+          type="button"
+          id="btn-toggle-mobile-menu"
+          class="header__content__btn-toggle"
+          aria-label="toggle mobile menu"
+        ></button>
+        <nav class="nav__content display-none">
           <ul>
             <li>
               <a href="../index.html"
@@ -31,7 +37,7 @@
                 >Home</a
               >
             </li>
-            <li>
+            <li class="page__active">
               <a href="../pages/destination.html"
                 ><span class="nav__content__link-number" aria-hidden="true"
                   >01</span
@@ -54,12 +60,6 @@
             </li>
           </ul>
         </nav>
-        <button
-          type="button"
-          id="btn-toggle-mobile-menu"
-          class="header__content__btn-toggle"
-          aria-label="toggle mobile menu"
-        ></button>
       </div>
     </header>
 
@@ -78,7 +78,7 @@
           </div>
           <div class="destination__content__text-content">
             <div class="text-content__destination-buttons">
-              <button>Moon</button>
+              <button class="active">Moon</button>
               <button>Mars</button>
 
               <button>Europa</button>

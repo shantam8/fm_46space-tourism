@@ -9,12 +9,16 @@
   --color-white: #ffffff;
   --color-nav-bg: #262a33;
   --color-navbar-line: #484b54;
-  --color-hover: #85868b;
-
+  
   --color-crew-border: #383b4b;
   --color-crew-rank: #909296;
   --color-crew-bullet: #36373f;
   --color-technology-circle: #484951;
+
+  
+  --color-light-gray: #85868b;
+  --color-light-gray-half-transparent: #85868b77;
+  --color-dark-gray:#484A52;
 }
 
 * {
@@ -39,7 +43,7 @@ h3 {
 }
 
 h4,
-.btn__explore {
+#btn__explore {
   font-size: 20px;
   letter-spacing: 1.25px;
   color: var(--color-dark);
@@ -87,7 +91,7 @@ h1,
 h2,
 h3,
 h4,
-.btn__explore,
+#btn__explore,
 .p__subheading1 {
   font-family: var(--font-bellefair);
   font-weight: 400;
@@ -124,7 +128,7 @@ body {
   }
 
   h4,
-  .btn__explore {
+  #btn__explore {
     font-size: 24px;
     letter-spacing: 2px;
   }
@@ -160,7 +164,7 @@ body {
   }
 
   h4,
-  .btn__explore {
+  #btn__explore {
     font-size: 32px;
   }
 
