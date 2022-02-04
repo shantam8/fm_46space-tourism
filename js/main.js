@@ -15,20 +15,28 @@ let btnsTechnologySelect = document.querySelectorAll(
 
 let data;
 function handleMobileMenu() {
+  let urlHamburger;
+  let urlClose;
+  if (document.title == "Space Tourism") {
+    urlHamburger = 'url("./assets/shared/icon-hamburger.svg")';
+    urlClose = 'url("./assets/shared/icon-close.svg")';
+  } else {
+    urlHamburger = 'url("../assets/shared/icon-hamburger.svg")';
+    urlClose = 'url("../assets/shared/icon-close.svg")';
+  }
+
   if (navbar.classList.contains("open-menu")) {
     setTimeout(() => {
       navbar.classList.toggle("display-none");
     }, 250);
     navbar.classList.toggle("open-menu");
-    btnToggleMobileMenu.style.backgroundImage =
-      'url("../assets/shared/icon-hamburger.svg")';
+    btnToggleMobileMenu.style.backgroundImage = urlHamburger;
   } else {
     setTimeout(() => {
       navbar.classList.toggle("open-menu");
     }, 50);
     navbar.classList.toggle("display-none");
-    btnToggleMobileMenu.style.backgroundImage =
-      'url("../assets/shared/icon-close.svg")';
+    btnToggleMobileMenu.style.backgroundImage = urlClose;
   }
 }
 
@@ -124,7 +132,6 @@ function handleTechnologySelection(event) {
 }
 
 function fillTechnologyCard(cardData) {
-  console.log(cardData);
   let name = cardData.name;
   let description = cardData.description;
   let imageLandscape = cardData.images.landscape;
@@ -141,7 +148,12 @@ function fillTechnologyCard(cardData) {
 }
 
 function fetchData() {
-  fetch("../json/data.json")
+  let fetchUrl;
+  document.title == "Space Tourism"
+    ? (fetchUrl = "./json/data.json")
+    : (fetchUrl = "../json/data.json");
+
+  fetch(fetchUrl)
     .then((response) => response.json())
     .then((response) => {
       data = response;
@@ -181,6 +193,8 @@ function init() {
   if (!navbar.classList.contains("open-menu") && screen.width >= 768) {
     btnToggleMobileMenu.click();
   }
+
+  console.log(document.title);
 
   fetchData();
 }
