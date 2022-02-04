@@ -14,10 +14,12 @@ let btnsTechnologySelect = document.querySelectorAll(
 );
 
 let data;
+let indexPage;
+
 function handleMobileMenu() {
   let urlHamburger;
   let urlClose;
-  if (document.title == "Space Tourism") {
+  if (indexPage) {
     urlHamburger = 'url("./assets/shared/icon-hamburger.svg")';
     urlClose = 'url("./assets/shared/icon-close.svg")';
   } else {
@@ -149,7 +151,7 @@ function fillTechnologyCard(cardData) {
 
 function fetchData() {
   let fetchUrl;
-  document.title == "Space Tourism"
+  indexPage
     ? (fetchUrl = "./json/data.json")
     : (fetchUrl = "../json/data.json");
 
@@ -185,14 +187,18 @@ function init() {
     } else if (screen.width < 768) {
       navbar.classList.add("display-none");
       navbar.classList.remove("open-menu");
-      btnToggleMobileMenu.style.backgroundImage =
-        'url("../assets/shared/icon-hamburger.svg")';
+      indexPage
+        ? (btnToggleMobileMenu.style.backgroundImage =
+            'url("./assets/shared/icon-hamburger.svg")')
+        : (btnToggleMobileMenu.style.backgroundImage =
+            'url("../assets/shared/icon-hamburger.svg")');
     }
   });
 
   if (!navbar.classList.contains("open-menu") && screen.width >= 768) {
     btnToggleMobileMenu.click();
   }
+  document.title == "Space Tourism" ? (indexPage = true) : (indexPage = false);
 
   console.log(document.title);
 
